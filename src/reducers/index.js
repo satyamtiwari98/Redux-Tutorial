@@ -3,6 +3,9 @@
 
 const initialState = {
   counter: 0,
+  name: "",
+  age: "",
+  city: ["Lucknow", "Delhi", "Prayagraj"],
 };
 
 const counterReducer = (state = initialState, action) => {
@@ -11,6 +14,12 @@ const counterReducer = (state = initialState, action) => {
       return { ...state, counter: state.counter + 1 };
     case "DECREMENT":
       return { ...state, counter: state.counter - 1 };
+    case "ADD_NAME":
+      return { ...state, name: action.name };
+    case "ADD_AGE":
+      return { ...state, age: action.age };
+    case "CLEAR":
+      return { ...state, name: "", age: "" };
     default:
       return state;
   }
