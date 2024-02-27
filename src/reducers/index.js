@@ -6,6 +6,7 @@ const initialState = {
   name: "",
   age: "",
   city: ["Lucknow", "Delhi", "Prayagraj"],
+  liveIn: "",
 };
 
 const counterReducer = (state = initialState, action) => {
@@ -19,7 +20,9 @@ const counterReducer = (state = initialState, action) => {
     case "ADD_AGE":
       return { ...state, age: action.age };
     case "CLEAR":
-      return { ...state, name: "", age: "" };
+      return { ...state, name: "", age: "", liveIn: "" };
+    case "SELECTED":
+      return { ...state, liveIn: action.ele };
     default:
       return state;
   }
